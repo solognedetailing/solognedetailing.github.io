@@ -1348,7 +1348,7 @@ div.legality>div>div>ul>li>a {
   /* ***************************** */
 
   div#second_home_picture {
-    background-attachment: fixed;
+    background-attachment: scroll;
     height: 25em;
   }
 
@@ -1359,6 +1359,10 @@ div.legality>div>div>ul>li>a {
   /* ***************************** */
   /* CONTACT */
   /* ***************************** */
+
+  div#contact {
+    background-attachment: scroll;
+  }
 
   div#contact>div>div>div#contact_content {
     height: auto;
