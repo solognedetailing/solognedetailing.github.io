@@ -4,7 +4,9 @@ $(document).ready(function () {
 
    // Initiate JS animate scroll screen
    AOS.init({
-      once: true
+      once: true,
+      debounceDelay: 50,
+      throttleDelay: 99
    });
 
    // NAVBAR
@@ -37,26 +39,32 @@ $(document).ready(function () {
          });
       });
 
-      setTimeout(function () {
-         $('#modal_nav').removeClass('hiden_modal');
-      }, 10000);
-   }
-   $('.nav_li').click(function () {
-      var li = $(this).attr('data-tab');
-      $('.nav_li').children().removeClass('active');
-      $('#' + li).addClass('active');
-   });
+      // Vérifiez si l'utilisateur a déjà vu la modal
+      const hasSeenModal = localStorage.getItem('hasSeenModal');
+      if (!hasSeenModal) {
+         // Si la modal n'a pas encore été vue, affichez-la
+         $('.modal').removeClass('hiden_modal');
 
-   // MODAL
-   $('.close').click(function () {
-      $('.modal').addClass('hiden_modal');
-   });
+         $('.close').click(function () {
+            $('.modal').addClass('hiden_modal');
+            localStorage.setItem('hasSeenModal', 'true');
+         });
+      
+         $('.modal').click(function (e) {
+            if (e.target == e.currentTarget) {
+               $(this).addClass('hiden_modal');
+               localStorage.setItem('hasSeenModal', 'true');
+            }
+         });
 
-   $('.modal').click(function (e) {
-      if (e.target == e.currentTarget) {
-         $(this).addClass('hiden_modal');
       }
-   });
+
+   }
+   // $('.nav_li').click(function () {
+   //    var li = $(this).attr('data-tab');
+   //    $('.nav_li').children().removeClass('active');
+   //    $('#' + li).addClass('active');
+   // });
 
    // SCROLL LINK
    $("a[href*='#']:not([href='#'])").click(function () {
@@ -95,35 +103,35 @@ $(document).ready(function () {
       }, 10200);
    });
 
+   // PRELOAD PICTURES
+   const preloadImages = (images) => {
+      images.slice(0, 2).forEach((src) => { // Charge uniquement les 2 premières images
+         const img = new Image();
+         img.src = src;
+      });
+   };
+
    // HOME BACKGROUND CAROUSEL
    const home_container = document.getElementById("home");
    const pictures_home = [
+      "assets/img/detailing/detailing24.jpg",
       "assets/img/cars/car2.png",
       "assets/img/cars/car86.jpg",
       "assets/img/detailing/detailing12.jpg",
       "assets/img/cars/car19.jpg",
       "assets/img/detailing/detailing11.jpg",
    ]
-   const backgroundSlide = (images, container, step) => {
-      images.forEach((image, index) => (
-         setTimeout(() => {
-            container.style.backgroundImage = `url(${image})`
-         }, step * (index + 1))
-      ))
-      setTimeout(() => backgroundSlide(images, container, step), step * images.length)
-   }
-   backgroundSlide(pictures_home, home_container, 5000);
-
-   // BIOGRAPHIE PICTURES SLIDE
-   const biographie_container = document.getElementById("img_bio");
-   const pictures_biographie = [
-      "assets/img/detailing/detailing2.jpg",
-      "assets/img/detailing/detailing22.jpg",
-      "assets/img/detailing/detailing35.jpg",
-      "assets/img/detailing/detailing24.jpg",
-      "assets/img/detailing/detailing8.jpg",
-   ]
-   backgroundSlide(pictures_biographie, biographie_container, 5000);
+   const backgroundSlideOptimized = (images, container, step) => {
+      let index = 0;
+      const changeBackground = () => {
+         container.style.backgroundImage = `url(${images[index]})`;
+         index = (index + 1) % images.length;
+         setTimeout(() => requestAnimationFrame(changeBackground), step);
+      };
+      changeBackground();
+   };
+   preloadImages(pictures_home);
+   backgroundSlideOptimized(pictures_home, home_container, 5000);
 
    // SCROLL-UP BUTTON
    $(window).scroll(function () {
@@ -146,12 +154,12 @@ $(document).ready(function () {
    $('.main-animate').fadeOut().delay(1000).fadeIn(1500);
    $('#scroll_button').fadeOut().delay(2000).fadeIn(1500);
 
-});
-
-// STOP MOUSE CLICK
-$(document).bind('contextmenu', function (e) {
-   e.stopPropagation();
-   e.preventDefault();
-   e.stopImmediatePropagation();
-   return false;
-});
+});const backgroundSlideOptimized = (images, container, step) => {
+   let index = 0;
+   const changeBackground = () => {
+      container.style.backgroundImage = `url(${images[index]})`;
+      index = (index + 1) % images.length;
+      setTimeout(() => requestAnimationFrame(changeBackground), step);
+   };
+   changeBackground();
+};
