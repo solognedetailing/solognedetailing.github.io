@@ -122,14 +122,14 @@ $(document).ready(function () {
       };
       changeBackground();
    };
+   const preloadImages = (images) => {
+      images.slice(0, 6).forEach((src) => {
+         const img = new Image();
+         img.src = src;
+      });
+   };
    preloadImages(pictures_home);
    backgroundSlideOptimized(pictures_home, home_container, 5000);
-
-   // Appliquer la variable CSS
-   home.style.backgroundImage = `url(${pictures_home[current]})`;
-   document.documentElement.style.setProperty("--next-bg", "");
-
-   setInterval(swapBackground, 5000);
 
    // SCROLL-UP BUTTON
    $(window).scroll(function () {
