@@ -113,23 +113,13 @@ $(document).ready(function () {
       "assets/img/cars/car19.jpg",
       "assets/img/detailing/detailing11.jpg",
    ]
-   const backgroundSlideOptimized = (images, container, step) => {
-      let index = 0;
-      const changeBackground = () => {
-         container.style.backgroundImage = `url(${images[index]})`;
-         index = (index + 1) % images.length;
-         setTimeout(() => requestAnimationFrame(changeBackground), step);
-      };
-      changeBackground();
-   };
-   const preloadImages = (images) => {
-      images.slice(0, 6).forEach((src) => {
-         const img = new Image();
-         img.src = src;
-      });
-   };
-   preloadImages(pictures_home);
-   backgroundSlideOptimized(pictures_home, home_container, 5000);
+   let index = 0;
+   function changeBackground() {
+      home_container.style.backgroundImage = `url(${pictures_home[index]})`;
+      index = (index + 1) % pictures_home.length;
+   }
+   changeBackground();
+   setInterval(changeBackground, 5000);
 
    // SCROLL-UP BUTTON
    $(window).scroll(function () {
