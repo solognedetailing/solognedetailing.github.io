@@ -105,12 +105,20 @@ $(document).ready(function () {
 
    // HOME BACKGROUND CAROUSEL
    const pictures_home = [
-      "assets/img/detailing/detailing24.jpg",
-      "assets/img/cars/car2.png",
-      "assets/img/cars/car86.jpg",
-      "assets/img/detailing/detailing12.jpg",
-      "assets/img/cars/car19.jpg",
-      "assets/img/detailing/detailing11.jpg",
+      // server
+      "/assets/img/detailing/detailing24.jpg",
+      "/assets/img/cars/car2.png",
+      "/assets/img/cars/car86.jpg",
+      "/assets/img/detailing/detailing12.jpg",
+      "/assets/img/cars/car19.jpg",
+      "/assets/img/detailing/detailing11.jpg",
+      // local
+      // "assets/img/detailing/detailing24.jpg",
+      // "assets/img/cars/car2.png",
+      // "assets/img/cars/car86.jpg",
+      // "assets/img/detailing/detailing12.jpg",
+      // "assets/img/cars/car19.jpg",
+      // "assets/img/detailing/detailing11.jpg",
    ]
    let current = 0;
 
