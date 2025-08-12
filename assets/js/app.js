@@ -103,16 +103,7 @@ $(document).ready(function () {
       }, 10200);
    });
 
-   // PRELOAD PICTURES
-   const preloadImages = (images) => {
-      images.slice(0, 2).forEach((src) => { // Charge uniquement les 2 premières images
-         const img = new Image();
-         img.src = src;
-      });
-   };
-
    // HOME BACKGROUND CAROUSEL
-   const home_container = document.getElementById("home");
    const pictures_home = [
       "assets/img/detailing/detailing24.jpg",
       "assets/img/cars/car2.png",
@@ -121,17 +112,31 @@ $(document).ready(function () {
       "assets/img/cars/car19.jpg",
       "assets/img/detailing/detailing11.jpg",
    ]
-   const backgroundSlideOptimized = (images, container, step) => {
-      let index = 0;
-      const changeBackground = () => {
-         container.style.backgroundImage = `url(${images[index]})`;
-         index = (index + 1) % images.length;
-         setTimeout(() => requestAnimationFrame(changeBackground), step);
+   let current = 0;
+
+   function swapBackground() {
+      const nextIndex = (current + 1) % pictures_home.length;
+      const nextImage = pictures_home[nextIndex];
+
+      // Précharge dans le pseudo-élément
+      const img = new Image();
+      img.src = nextImage;
+      img.onload = () => {
+         home.style.setProperty("--next-bg", `url(${nextImage})`);
+         home.classList.add("fade");
+         setTimeout(() => {
+            home.style.backgroundImage = `url(${nextImage})`;
+            home.classList.remove("fade");
+            current = nextIndex;
+         }, 1000); // durée du fondu
       };
-      changeBackground();
-   };
-   preloadImages(pictures_home);
-   backgroundSlideOptimized(pictures_home, home_container, 5000);
+   }
+
+   // Appliquer la variable CSS
+   home.style.backgroundImage = `url(${pictures_home[current]})`;
+   document.documentElement.style.setProperty("--next-bg", "");
+
+   setInterval(swapBackground, 5000);
 
    // SCROLL-UP BUTTON
    $(window).scroll(function () {
