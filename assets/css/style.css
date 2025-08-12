@@ -441,24 +441,6 @@ div#home {
   transition: all 2s ease;
 }
 
-#home::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-#home::after {
-  background-image: var(--next-bg);
-}
-
-#home.fade::after {
-  opacity: 1;
-}
-
 div#home>div {
   display: none;
   position: absolute;

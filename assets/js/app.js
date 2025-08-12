@@ -49,7 +49,7 @@ $(document).ready(function () {
             $('.modal').addClass('hiden_modal');
             localStorage.setItem('hasSeenModal', 'true');
          });
-      
+
          $('.modal').click(function (e) {
             if (e.target == e.currentTarget) {
                $(this).addClass('hiden_modal');
@@ -104,41 +104,26 @@ $(document).ready(function () {
    });
 
    // HOME BACKGROUND CAROUSEL
+   const home_container = document.getElementById("home");
    const pictures_home = [
-      // server
-      "/assets/img/detailing/detailing24.jpg",
-      "/assets/img/cars/car2.png",
-      "/assets/img/cars/car86.jpg",
-      "/assets/img/detailing/detailing12.jpg",
-      "/assets/img/cars/car19.jpg",
-      "/assets/img/detailing/detailing11.jpg",
-      // local
-      // "assets/img/detailing/detailing24.jpg",
-      // "assets/img/cars/car2.png",
-      // "assets/img/cars/car86.jpg",
-      // "assets/img/detailing/detailing12.jpg",
-      // "assets/img/cars/car19.jpg",
-      // "assets/img/detailing/detailing11.jpg",
+      "assets/img/detailing/detailing24.jpg",
+      "assets/img/cars/car2.png",
+      "assets/img/cars/car86.jpg",
+      "assets/img/detailing/detailing12.jpg",
+      "assets/img/cars/car19.jpg",
+      "assets/img/detailing/detailing11.jpg",
    ]
-   let current = 0;
-
-   function swapBackground() {
-      const nextIndex = (current + 1) % pictures_home.length;
-      const nextImage = pictures_home[nextIndex];
-
-      // Précharge dans le pseudo-élément
-      const img = new Image();
-      img.src = nextImage;
-      img.onload = () => {
-         home.style.setProperty("--next-bg", `url(${nextImage})`);
-         home.classList.add("fade");
-         setTimeout(() => {
-            home.style.backgroundImage = `url(${nextImage})`;
-            home.classList.remove("fade");
-            current = nextIndex;
-         }, 1000); // durée du fondu
+   const backgroundSlideOptimized = (images, container, step) => {
+      let index = 0;
+      const changeBackground = () => {
+         container.style.backgroundImage = `url(${images[index]})`;
+         index = (index + 1) % images.length;
+         setTimeout(() => requestAnimationFrame(changeBackground), step);
       };
-   }
+      changeBackground();
+   };
+   preloadImages(pictures_home);
+   backgroundSlideOptimized(pictures_home, home_container, 5000);
 
    // Appliquer la variable CSS
    home.style.backgroundImage = `url(${pictures_home[current]})`;
@@ -167,7 +152,8 @@ $(document).ready(function () {
    $('.main-animate').fadeOut().delay(1000).fadeIn(1500);
    $('#scroll_button').fadeOut().delay(2000).fadeIn(1500);
 
-});const backgroundSlideOptimized = (images, container, step) => {
+});
+const backgroundSlideOptimized = (images, container, step) => {
    let index = 0;
    const changeBackground = () => {
       container.style.backgroundImage = `url(${images[index]})`;
