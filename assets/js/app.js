@@ -113,23 +113,46 @@ $(document).ready(function () {
       "assets/img/cars/car19.jpg",
       "assets/img/detailing/detailing11.jpg",
    ]
+   // Précharge toutes les images et lance le carousel après chargement
+   const preloadImages = (images, callback) => {
+      let loaded = 0;
+      const total = images.length;
+      const cache = [];
+      images.forEach((src, i) => {
+         const img = new Image();
+         img.onload = () => {
+            loaded++;
+            cache[i] = img;
+            if (loaded === total) callback(cache);
+         };
+         img.onerror = () => {
+            loaded++;
+            cache[i] = null;
+            if (loaded === total) callback(cache);
+         };
+         img.src = src;
+      });
+   };
+
    const backgroundSlideOptimized = (images, container, step) => {
       let index = 0;
       const changeBackground = () => {
-         container.style.backgroundImage = `url(${images[index]})`;
+         if (images[index]) {
+            container.style.backgroundImage = `url(${images[index].src})`;
+         }
          index = (index + 1) % images.length;
          setTimeout(() => requestAnimationFrame(changeBackground), step);
       };
       changeBackground();
    };
-   const preloadImages = (images) => {
-      images.slice(0, 6).forEach((src) => {
-         const img = new Image();
-         img.src = src;
-      });
-   };
-   preloadImages(pictures_home);
-   backgroundSlideOptimized(pictures_home, home_container, 5000);
+
+   preloadImages(pictures_home, (preloaded) => {
+      // Affiche la première image sans flash
+      if (preloaded[0]) {
+         home_container.style.backgroundImage = `url(${preloaded[0].src})`;
+      }
+      backgroundSlideOptimized(preloaded, home_container, 5000);
+   });
 
    // SCROLL-UP BUTTON
    $(window).scroll(function () {
