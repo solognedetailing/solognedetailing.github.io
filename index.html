@@ -30,6 +30,7 @@
 
      <!-- CSS -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
      <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
      <link rel="stylesheet" href="assets/css/aos.min.css">
      <link rel="stylesheet" href="assets/css/style.css">
@@ -40,44 +41,66 @@
      <!-- Google tag (gtag.js) -->
      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17662964749"></script>
      <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-     
-       gtag('config', 'AW-17662964749');
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+               dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'AW-17662964749');
      </script>
 
      <!-- Google Tag Manager -->
-     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-     })(window,document,'script','dataLayer','GTM-KJM96CNS');</script>
+     <script>
+          (function (w, d, s, l, i) {
+               w[l] = w[l] || [];
+               w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+               });
+               var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+               j.async = true;
+               j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+               f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', 'GTM-KJM96CNS');
+     </script>
      <!-- End Google Tag Manager -->
 
      <!-- Meta Pixel Code -->
      <script>
-     !function(f,b,e,v,n,t,s)
-     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-     n.queue=[];t=b.createElement(e);t.async=!0;
-     t.src=v;s=b.getElementsByTagName(e)[0];
-     s.parentNode.insertBefore(t,s)}(window, document,'script',
-     'https://connect.facebook.net/en_US/fbevents.js');
-     fbq('init', '1236767771642032');
-     fbq('track', 'PageView');
+          ! function (f, b, e, v, n, t, s) {
+               if (f.fbq) return;
+               n = f.fbq = function () {
+                    n.callMethod ?
+                         n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+               };
+               if (!f._fbq) f._fbq = n;
+               n.push = n;
+               n.loaded = !0;
+               n.version = '2.0';
+               n.queue = [];
+               t = b.createElement(e);
+               t.async = !0;
+               t.src = v;
+               s = b.getElementsByTagName(e)[0];
+               s.parentNode.insertBefore(t, s)
+          }(window, document, 'script',
+               'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1236767771642032');
+          fbq('track', 'PageView');
      </script>
      <noscript><img height="1" width="1" style="display:none"
-     src="https://www.facebook.com/tr?id=1236767771642032&ev=PageView&noscript=1"
-     /></noscript>
+               src="https://www.facebook.com/tr?id=1236767771642032&ev=PageView&noscript=1" /></noscript>
      <!-- End Meta Pixel Code -->
 </head>
 
 <body ondragstart="return false;" ondrop="return false;">
      <!-- Google Tag Manager (noscript) -->
-     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJM96CNS"
-     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJM96CNS" height="0" width="0"
+               style="display:none;visibility:hidden"></iframe></noscript>
      <!-- End Google Tag Manager (noscript) -->
 
      <!-- SCROLL-UP BUTTON -->
@@ -96,6 +119,8 @@
                               ?</a></li>
                     <li class="nav_li" data-tab="nav_gallery"><a href="#gallery" id="nav_gallery">Galerie</a></li>
                     <li class="nav_li" data-tab="nav_models"><a href="#price" id="nav_models">Prestations</a></li>
+                    <li class="nav_li" data-tab="nav_certification"><a href="#certification"
+                              id="nav_certification">Certifications</a></li>
                     <li class="nav_li" data-tab="nav_contact"><a href="#contact" id="nav_contact">Contact</a></li>
                </div>
           </ul>
@@ -1025,7 +1050,7 @@
      <div class="model_pictures container-fluid" id="gallery">
           <div class="row">
                <div class="col-lg-3 col-md-6 col-12 first_column">
-                    <img src="assets/img/cars/car19.jpg" alt="cars" data-aos="fade-up" data-aos-duration="1500"
+                    <img src="assets/img/cars/car86.jpg" alt="cars" data-aos="fade-up" data-aos-duration="1500"
                          loading="lazy">
                     <img src="assets/img/cars/car50.jpg" alt="cars" data-aos="fade-up" data-aos-duration="1500"
                          loading="lazy">
@@ -1208,6 +1233,269 @@
           </div>
      </div>
 
+     <!-- CERTIFICATION -->
+     <div id="certification">
+          <h2 data-aos="fade-right" data-aos-duration="1500"><span>Certifications</span></h2>
+          <div class="container-fluid">
+               <div class="row">
+                    <div class="col-12" id="certification_content" data-aos="fade-up" data-aos-duration="1500">
+                         <div class="emotions-slider">
+
+                              <!-- Slider Navigation -->
+
+                              <div class="emotions-slider__nav slider-nav">
+                                   <div tabindex="0" class="slider-nav__item slider-nav__item_prev">
+                                        <svg width="16" height="28" viewBox="0 0 16 28" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M14 26L2 14L14 2" stroke="white" stroke-width="4"
+                                                  stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                   </div>
+                                   <div tabindex="0" class="slider-nav__item slider-nav__item_next">
+                                        <svg width="16" height="28" viewBox="0 0 16 28" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M2 26L14 14L2 2" stroke="white" stroke-width="4"
+                                                  stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                   </div>
+                              </div>
+
+                              <!-- Slider Content -->
+
+                              <div class="emotions-slider__slider swiper">
+                                   <div class="emotions-slider__wrapper swiper-wrapper">
+
+                                        <!-- Slider: Slide 1 -->
+                                        <div class="emotions-slider__slide swiper-slide">
+                                             <div class="emotions-slider__item emotions-slider-item">
+                                                  <div class="emotions-slider-item__image">
+                                                       <img src="assets/img/certification/certification5.png"
+                                                            alt="Winds of Change" />
+                                                  </div>
+                                                  <div class="emotions-slider-item__content">
+                                                       <div class="emotions-slider-item__header">
+                                                            <div class="emotions-slider-item__header-inner">
+                                                                 <div class="emotions-slider-item__author">
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Damien Vincent
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-image">
+                                                                           <img src="assets/img/logo.png"
+                                                                                alt="Sologne Detailing" />
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Sologne Détailing
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="emotions-slider-item__info">
+                                                            <h2 class="emotions-slider-item__title">
+                                                                 Honey Combination
+                                                            </h2>
+                                                            <div class="emotions-slider-item__text">
+                                                                 Certification d'utilisation & manipulation de polish de
+                                                                 la marque Honey Combination, décernée par Honey
+                                                                 Combination.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <!-- Slider: Slide 2 -->
+                                        <div class="emotions-slider__slide swiper-slide">
+                                             <div class="emotions-slider__item emotions-slider-item">
+                                                  <div class="emotions-slider-item__image">
+                                                       <img src="assets/img/certification/certification4.png"
+                                                            alt="Winds of Change" />
+                                                  </div>
+                                                  <div class="emotions-slider-item__content">
+                                                       <div class="emotions-slider-item__header">
+                                                            <div class="emotions-slider-item__header-inner">
+                                                                 <div class="emotions-slider-item__author">
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Damien Vincent
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-image">
+                                                                           <img src="assets/img/logo.png"
+                                                                                alt="Sologne Detailing" />
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Sologne Détailing
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="emotions-slider-item__info">
+                                                            <h2 class="emotions-slider-item__title">
+                                                                 SCHOLL CONCEPTS
+                                                            </h2>
+                                                            <div class="emotions-slider-item__text">
+                                                                 Certification de polissage décernée par SCHOLL
+                                                                 CONCEPTS.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <!-- Slider: Slide 3 -->
+                                        <div class="emotions-slider__slide swiper-slide">
+                                             <div class="emotions-slider__item emotions-slider-item">
+                                                  <div class="emotions-slider-item__image">
+                                                       <img src="assets/img/certification/certification1.png"
+                                                            alt="Winds of Change" />
+                                                  </div>
+                                                  <div class="emotions-slider-item__content">
+                                                       <div class="emotions-slider-item__header">
+                                                            <div class="emotions-slider-item__header-inner">
+                                                                 <div class="emotions-slider-item__author">
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Damien Vincent
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-image">
+                                                                           <img src="assets/img/logo.png"
+                                                                                alt="Sologne Detailing" />
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Sologne Détailing
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="emotions-slider-item__info">
+                                                            <h2 class="emotions-slider-item__title">
+                                                                 FLEXPERTS
+                                                            </h2>
+                                                            <div class="emotions-slider-item__text">
+                                                                 Certification décernée par FLEXPERTS.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <!-- Slider: Slide 4 -->
+                                        <div class="emotions-slider__slide swiper-slide">
+                                             <div class="emotions-slider__item emotions-slider-item">
+                                                  <div class="emotions-slider-item__image">
+                                                       <img src="assets/img/certification/certification2.png"
+                                                            alt="Winds of Change" />
+                                                  </div>
+                                                  <div class="emotions-slider-item__content">
+                                                       <div class="emotions-slider-item__header">
+                                                            <div class="emotions-slider-item__header-inner">
+                                                                 <div class="emotions-slider-item__author">
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Damien Vincent
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-image">
+                                                                           <img src="assets/img/logo.png"
+                                                                                alt="Sologne Detailing" />
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Sologne Détailing
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="emotions-slider-item__info">
+                                                            <h2 class="emotions-slider-item__title">
+                                                                 INNOVACAR
+                                                            </h2>
+                                                            <div class="emotions-slider-item__text">
+                                                                 Certification : Lavage à la protection, décernée par
+                                                                 INNOVACAR.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <!-- Slider: Slide 5 -->
+                                        <div class="emotions-slider__slide swiper-slide">
+                                             <div class="emotions-slider__item emotions-slider-item">
+                                                  <div class="emotions-slider-item__image">
+                                                       <img src="assets/img/certification/certification3.png"
+                                                            alt="Winds of Change" />
+                                                  </div>
+                                                  <div class="emotions-slider-item__content">
+                                                       <div class="emotions-slider-item__header">
+                                                            <div class="emotions-slider-item__header-inner">
+                                                                 <div class="emotions-slider-item__author">
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Damien Vincent
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-image">
+                                                                           <img src="assets/img/logo.png"
+                                                                                alt="Sologne Detailing" />
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Sologne Détailing
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="emotions-slider-item__info">
+                                                            <h2 class="emotions-slider-item__title">
+                                                                 Clean & Covering automobiles
+                                                            </h2>
+                                                            <div class="emotions-slider-item__text">
+                                                                 Certification de polissage avancé & restauration des
+                                                                 cuirs, décernée par
+                                                                 Clean & Covering automobiles.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <!-- Slider: Slide 6 -->
+                                        <div class="emotions-slider__slide swiper-slide">
+                                             <div class="emotions-slider__item emotions-slider-item">
+                                                  <div class="emotions-slider-item__image">
+                                                       <img src="assets/img/certification/certification7.png"
+                                                            alt="Winds of Change" />
+                                                  </div>
+                                                  <div class="emotions-slider-item__content">
+                                                       <div class="emotions-slider-item__header">
+                                                            <div class="emotions-slider-item__header-inner">
+                                                                 <div class="emotions-slider-item__author">
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Damien Vincent
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-image">
+                                                                           <img src="assets/img/logo.png"
+                                                                                alt="Sologne Detailing" />
+                                                                      </div>
+                                                                      <div class="emotions-slider-item__author-name">
+                                                                           Sologne Détailing
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="emotions-slider-item__info">
+                                                            <h2 class="emotions-slider-item__title">
+                                                                 Formation Métiers Detailing
+                                                            </h2>
+                                                            <div class="emotions-slider-item__text">
+                                                                 Certification de polissage lustré "effect", décernée
+                                                                 par
+                                                                 Formation Métiers Detailing.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <!-- Slider Pagination -->
+
+                              <div class="emotions-slider__pagination slider-pagination"></div>
+
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
      <!-- CONTACT -->
      <div id="contact">
           <h2 data-aos="fade-right" data-aos-duration="1500"><span>Contact</span></h2>
@@ -1220,37 +1508,54 @@
                          </a>
                     </div>
                     <div class="col-12 col-md-6" id="contact_content" data-aos="fade-down" data-aos-duration="1500">
-                         <div>
-                              <p>
-                                   <u>Adresse</u> :
-                                   <a target="_blank" href="#">
-                                        Local en cours de déménagement (<small><i>*à proximité de Blois/Romorantin</i></small>)</a>
-                              </p>
-                              <p>
-                                   <u>Téléphone</u> :
-                                   <a href="tel:+33672211681">06 72 21 16 81</a>
-                              </p>
-                              <p>
-                                   <u>Mail</u> :
-                                   <a href="mailto:s_detailing@hotmail.com">s_detailing@hotmail.com</a>
-                              </p>
-                              <p>
-                                   <u>Horaire</u> :
-                                   Du lundi au vendredi, de 8H30 à 19H
-                              </p>
+                         <div class="contact_info">
+                              <div class="contact_item">
+                                   <i class="fa fa-map-marker"></i>
+                                   <div class="contact_text">
+                                        <p class="contact_label">Adresse</p>
+                                        <a target="_blank" href="#" class="contact_value">
+                                             Local en cours de déménagement sur Couddes<br><small>*à proximité de Blois/Romorantin</small>
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="contact_item">
+                                   <i class="fa fa-phone"></i>
+                                   <div class="contact_text">
+                                        <p class="contact_label">Téléphone</p>
+                                        <a href="tel:+33672211681" class="contact_value">06 72 21 16 81</a>
+                                   </div>
+                              </div>
+                              <div class="contact_item">
+                                   <i class="fa fa-envelope"></i>
+                                   <div class="contact_text">
+                                        <p class="contact_label">E-mail</p>
+                                        <a href="mailto:s_detailing@hotmail.com" class="contact_value">s_detailing@hotmail.com</a>
+                                   </div>
+                              </div>
+                              <div class="contact_item">
+                                   <i class="fa fa-clock-o"></i>
+                                   <div class="contact_text">
+                                        <p class="contact_label">Horaires</p>
+                                        <p class="contact_value">Lun-Ven : 8H30 - 19H</p>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                </div>
                <div class="row">
                     <div class="col-12" id="contact_devis" data-aos="fade-up" data-aos-duration="1500">
                          <h5>DEMANDE DE RENSEIGNEMENTS / DEVIS</h5>
-                         Sologne Détailing, reste à votre disposition pour toute question ou devis.
-                         <br>
-                         Que ce soit pour une prestation concernant un lavage, un entretien de votre véhicule, une
-                         rénovation avec un
-                         traitement céramique ou autre, n'hésitez pas à nous contacter.
-                         <br>
-                         *Pensez à nous indiquer votre véhicule (marque/modèle), votre nom, ainsi que votre projet pour simplifier la prise de contact.
+                         <p style="margin-bottom: 1em;">Sologne Détailing, reste à votre disposition pour toute question ou devis.</p>
+                         <p>Que ce soit pour une prestation concernant un lavage, un entretien de votre véhicule, une rénovation avec un traitement céramique ou autre, n'hésitez pas à nous contacter.</p>
+                         <p class="contact_note">*Pensez à nous indiquer votre véhicule (marque/modèle), votre nom, ainsi que votre projet pour simplifier la prise de contact.</p>
+                         <div class="contact_buttons">
+                              <a href="tel:+33672211681" class="btn_contact btn_phone">
+                                   <i class="fa fa-phone"></i> Appeler
+                              </a>
+                              <a href="mailto:s_detailing@hotmail.com" class="btn_contact btn_email">
+                                   <i class="fa fa-envelope"></i> Envoyer un mail
+                              </a>
+                         </div>
                     </div>
                </div>
           </div>
@@ -1295,6 +1600,7 @@
      <script src="assets/js/aos.min.js"></script>
      <script src="assets/js/jquery.min.js"></script>
      <script src="https://browser.sentry-cdn.com/7.57.0/bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
      <script src="assets/js/app.js"></script>
 </body>
 
