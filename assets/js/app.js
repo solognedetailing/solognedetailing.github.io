@@ -60,6 +60,14 @@ $(document).ready(function () {
             hamburger.style.right = 'auto';
          }
       });
+
+      $(window).scroll(function () {
+         if ($(window).scrollTop() >= 500) {
+            $('#hamburger').fadeIn();
+         } else {
+            $('#hamburger').fadeOut();
+         }
+   });
    }
 
    // SCROLL LINK
