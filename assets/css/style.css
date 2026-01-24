@@ -150,7 +150,7 @@ nav>ul>div.nav_link>li>a.active:hover {
 
 /* HAMBURGER BUTTON */
 .hamburger {
-  display: none;
+  display: flex;
   position: fixed;
   bottom: 30px;
   left: 30px;
@@ -164,6 +164,16 @@ nav>ul>div.nav_link>li>a.active:hover {
   width: 50px;
   height: 40px;
   transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.hamburger.flex {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
 .hamburger span {
@@ -218,7 +228,6 @@ nav>ul>div.nav_link>li>a.active:hover {
   right: 30px;
   width: 50px;
   height: 50px;
-  display: block;
   display: none;
   transition: all 0.3s ease;
   z-index: 10;
@@ -853,6 +862,7 @@ div#certification {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 div#certification>h2 {
@@ -881,6 +891,7 @@ div#certification>h2>span {
   padding-inline: 98px;
   position: relative;
   margin: 3em auto;
+  overflow-x: hidden;
 }
 
 .emotions-slider__slide {
@@ -892,7 +903,7 @@ div#certification>h2>span {
 @media screen and (max-width: 767.9px) {
   .emotions-slider {
     padding: 0;
-    margin-inline: -20px;
+    margin-inline: 0;
   }
 
   /* NAVBAR RESPONSIVE - BOTTOM SHEET */
@@ -938,7 +949,7 @@ div#certification>h2>span {
     font-size: 18px;
   }
 
-  .hamburger {
+  .flex {
     display: flex;
   }
 }

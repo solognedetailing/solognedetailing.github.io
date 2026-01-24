@@ -19,7 +19,7 @@ $(document).ready(function () {
          }
       });
    }
-   
+
    if (window.matchMedia("(max-width: 720px)").matches) {
       // BOTTOM SHEET MENU
       const hamburger = document.getElementById('hamburger');
@@ -29,7 +29,7 @@ $(document).ready(function () {
       hamburger.addEventListener('click', function () {
          hamburger.classList.toggle('active');
          nav.classList.toggle('active');
-         
+
          // Position hamburger in bottom right when navbar is open
          if (hamburger.classList.contains('active')) {
             hamburger.style.left = 'auto';
@@ -63,11 +63,11 @@ $(document).ready(function () {
 
       $(window).scroll(function () {
          if ($(window).scrollTop() >= 500) {
-            $('#hamburger').fadeIn();
+            $('#hamburger').addClass('flex');
          } else {
-            $('#hamburger').fadeOut();
+            $('#hamburger').removeClass('flex');
          }
-   });
+      });
    }
 
    // SCROLL LINK
