@@ -158,6 +158,58 @@ $(document).ready(function () {
       backgroundSlideOptimized(preloaded, home_container, 5000);
    });
 
+   // GENERIC GALLERY SLIDER
+   const galleryImages = [
+      'car41.jpg', 'car86.jpg', 'car19.jpg', 'car50.jpg', 'car2.png'
+   ];
+
+   const galleryImage = document.getElementById('gallery_main_image');
+   const galleryThumbnails = document.getElementById('gallery_thumbnails');
+   const galleryCounter = document.getElementById('gallery_counter');
+   const galleryCaption = document.getElementById('gallery_caption');
+   let activeGalleryIndex = 0;
+
+   const renderGallery = (imageIndex = 0) => {
+      if (!galleryImage || !galleryThumbnails || !galleryImages.length) return;
+
+      activeGalleryIndex = imageIndex;
+      galleryImage.classList.add('is-changing');
+
+      setTimeout(() => {
+         galleryImage.src = `assets/img/cars/${galleryImages[imageIndex]}`;
+         galleryImage.alt = `Réalisation ${imageIndex + 1} de Sologne Détailing`;
+         galleryCounter.textContent = `${String(imageIndex + 1).padStart(2, '0')} / ${String(galleryImages.length).padStart(2, '0')}`;
+         galleryCaption.textContent = 'Découvrez quelques réalisations et le soin apporté à chaque véhicule dans notre atelier.';
+         galleryImage.classList.remove('is-changing');
+      }, 180);
+
+      galleryThumbnails.innerHTML = galleryImages.map((image, index) => `
+         <button class="gallery_thumbnail${index === imageIndex ? ' active' : ''}" type="button" data-image-index="${index}" aria-label="Voir l'image ${index + 1}">
+            <img src="assets/img/cars/${image}" alt="">
+         </button>`).join('');
+
+      galleryThumbnails.querySelectorAll('.gallery_thumbnail').forEach(thumbnail => {
+         thumbnail.addEventListener('click', () => renderGallery(Number(thumbnail.dataset.imageIndex)));
+      });
+   };
+
+   if (galleryImage) {
+      const previousButton = document.querySelector('.gallery_previous');
+      const nextButton = document.querySelector('.gallery_next');
+      if (previousButton) {
+         previousButton.addEventListener('click', () => {
+            renderGallery((activeGalleryIndex - 1 + galleryImages.length) % galleryImages.length);
+         });
+      }
+      if (nextButton) {
+         nextButton.addEventListener('click', () => {
+            renderGallery((activeGalleryIndex + 1) % galleryImages.length);
+         });
+      }
+
+      renderGallery();
+   }
+
    // SCROLL-UP BUTTON
    $(window).scroll(function () {
       if ($(window).scrollTop() >= 500) {
@@ -208,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       list.push(
          new Swiper(slider, {
-            slidesPerView: "auto",
+            slidesPerView: 1,
             spaceBetween: 20,
             speed: 600,
             observer: true,
