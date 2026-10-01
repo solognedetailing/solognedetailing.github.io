@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damien Vincent | Sologne Detailing</title>
+    <meta name="description" content="Carte de visite numérique de Damien Vincent - Sologne Detailing">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #08090b;
+            background-image: linear-gradient(rgba(8, 9, 11, 0.84), rgba(8, 9, 11, 0.94)), url('../assets/img/cars/car41.jpg');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #e0e0e0;
+        }
+
+        .glass-card {
+            background: rgba(8, 9, 11, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-radius: 26px;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, #c300ff, #ff5b5f);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(195, 0, 255, 0.35);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: rgba(255, 255, 255, 0.78);
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #c300ff;
+            color: #fff;
+        }
+
+        .brand-accent {
+            color: #c300ff;
+        }
+
+        .brand-heading {
+            font-family: 'main', Georgia, serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
+
+    <main class="w-full max-w-md glass-card rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+        <!-- En-tête : Logo & Photo -->
+        <div class="text-center relative z-10">
+            <div
+                class="w-28 h-28 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-zinc-900/80 border border-white/10 p-3 shadow-inner">
+                <img src="../assets/img/logo.png" alt="Sologne Detailing Logo"
+                    class="max-h-full max-w-full object-contain"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/120x120/1f2937/ffffff?text=SD';" />
+            </div>
+
+            <h1 class="brand-heading text-2xl text-white">Damien Vincent</h1>
+            <p class="brand-accent font-semibold text-sm uppercase tracking-wider mt-1">Sologne Detailing</p>
+            <p class="text-zinc-400 text-xs mt-1">Rénovation & Protection Automobile</p>
+        </div>
+
+        <!-- Actions principales -->
+        <div class="mt-6">
+            <a href="contact.vcf" download="Damien_Vincent_Sologne_Detailing.vcf"
+                class="btn-gradient w-full py-3.5 px-4 rounded-xl font-semibold flex items-center justify-center space-x-3 text-sm">
+                <i class="fa-solid fa-user-plus text-lg"></i>
+                <span>Enregistrer le contact</span>
+            </a>
+        </div>
+
+        <!-- Raccourcis Rapides -->
+        <div class="grid grid-cols-4 gap-2 mt-4">
+            <a href="tel:0672211681"
+                class="flex flex-col items-center justify-center p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition">
+                <i class="fa-solid fa-phone brand-accent text-lg mb-1"></i>
+                <span class="text-xs font-medium">Appeler</span>
+            </a>
+
+            <a href="sms:+33672211681" aria-label="Envoyer un SMS" title="Envoyer un message"
+                class="flex flex-col items-center justify-center p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition">
+                <i class="fa-solid fa-message brand-accent text-lg mb-1"></i>
+                <span class="text-xs font-medium">Message</span>
+            </a>
+
+            <a href="mailto:s_detailing@hotmail.com"
+                class="flex flex-col items-center justify-center p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition">
+                <i class="fa-solid fa-envelope brand-accent text-lg mb-1"></i>
+                <span class="text-xs font-medium">E-mail</span>
+            </a>
+
+            <a href="https://maps.google.com/?q=Couddes+41700" target="_blank" rel="noopener noreferrer"
+                class="flex flex-col items-center justify-center p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition">
+                <i class="fa-solid fa-location-dot brand-accent text-lg mb-1"></i>
+                <span class="text-xs font-medium">Plan</span>
+            </a>
+        </div>
+
+        <!-- Liste d'informations détaillées -->
+        <div class="mt-6 space-y-3 pt-6 border-t border-zinc-800/80">
+
+            <!-- Téléphone -->
+            <div class="flex items-center space-x-3 text-sm text-zinc-300">
+                <div
+                    class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0">
+                    <i class="fa-solid fa-mobile-screen text-xs"></i>
+                </div>
+                <div class="truncate">
+                    <p class="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold">Téléphone</p>
+                    <a href="tel:0672211681" class="hover:underline font-medium">06 72 21 16 81</a>
+                </div>
+            </div>
+
+            <!-- Mail -->
+            <div class="flex items-center space-x-3 text-sm text-zinc-300">
+                <div
+                    class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0">
+                    <i class="fa-solid fa-at text-xs"></i>
+                </div>
+                <div class="truncate">
+                    <p class="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold">E-mail</p>
+                    <a href="mailto:s_detailing@hotmail.com"
+                        class="hover:underline font-medium">s_detailing@hotmail.com</a>
+                </div>
+            </div>
+
+            <!-- Adresse -->
+            <div class="flex items-center space-x-3 text-sm text-zinc-300">
+                <div
+                    class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0">
+                    <i class="fa-solid fa-map-pin text-xs"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold">Localisation</p>
+                    <p class="font-medium">Couddes (41700)</p>
+                </div>
+            </div>
+
+            <!-- Horaires -->
+            <div class="flex items-center space-x-3 text-sm text-zinc-300">
+                <div
+                    class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0">
+                    <i class="fa-regular fa-clock text-xs"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold">Horaires d'ouverture</p>
+                    <p class="font-medium">Lundi – Vendredi : 8h30 – 19h00</p>
+                </div>
+            </div>
+
+            <!-- Site Web -->
+            <div class="flex items-center space-x-3 text-sm text-zinc-300">
+                <div
+                    class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 shrink-0">
+                    <i class="fa-solid fa-globe text-xs"></i>
+                </div>
+                <div class="truncate">
+                    <p class="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold">Site Web</p>
+                    <a href="https://solognedetailing.github.io/"
+                        class="hover:underline font-medium brand-accent">solognedetailing.github.io</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pied de page -->
+        <div class="mt-8 text-center text-xs text-zinc-600">
+            © Sologne Detailing — Tous droits réservés
+        </div>
+    </main>
+
+</body>
+
+</html>

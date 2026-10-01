@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Damien Vincent
+N:Vincent;Damien;;;
+ORG:Sologne Detailing
+TITLE:Detailing Automobile
+TEL;TYPE=CELL,VOICE:+33672211681
+EMAIL;TYPE=INTERNET,PREF:s_detailing@hotmail.com
+URL;TYPE=WORK:https://solognedetailing.github.io/
+ADR;TYPE=WORK:;;;Couddes;;41700;France
+NOTE:Horaires : Du lundi au vendredi de 8h30 à 19h00.
+END:VCARD
